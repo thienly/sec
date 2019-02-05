@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SagaState
+﻿namespace SagaState.Instance
 {
     public enum SagaStateStatus
     {
