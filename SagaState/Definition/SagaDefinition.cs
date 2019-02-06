@@ -8,8 +8,8 @@ namespace SagaState.Definition
         {
             Name = name;
         }
-        public string Name { get; }        
-        public List<SagaStageDefinition> TransDefinitions { get; } = new List<SagaStageDefinition>();
+        public string Name { get; set; }        
+        public List<SagaStageDefinition> TransDefinitions { get; set; } = new List<SagaStageDefinition>();
         public SagaDefinition DefineTransaction(SagaStageDefinition sagaStageDefinition)
         {
             TransDefinitions.Add(sagaStageDefinition);

@@ -8,8 +8,8 @@
             CompensatingTrans = compensatingTrans;
             Name = name;                        
         }
-        public string Name { get; }        
-        public ITransactionDefinition Trans { get; }
-        public ITransactionDefinition CompensatingTrans { get; }
+        public string Name { get; set; }        
+        public ITransactionDefinition Trans { get; set; }
+        public ITransactionDefinition CompensatingTrans { get; set;}
     }
 }

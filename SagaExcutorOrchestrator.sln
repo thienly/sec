@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SagaState", "SagaState\Saga
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SagaLog", "SagaLog\SagaLog.csproj", "{1E2BEA7E-35DF-43D0-96A9-D9B8818597EF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{54B9BCB7-8530-418F-B42D-DF1C6011346F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SagaStateTest", "tests\SagaStateTest\SagaStateTest.csproj", "{5DA96CEE-E707-4AC6-B098-E1139845CDBB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +31,16 @@ Global
 		{1E2BEA7E-35DF-43D0-96A9-D9B8818597EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E2BEA7E-35DF-43D0-96A9-D9B8818597EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E2BEA7E-35DF-43D0-96A9-D9B8818597EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DA96CEE-E707-4AC6-B098-E1139845CDBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DA96CEE-E707-4AC6-B098-E1139845CDBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DA96CEE-E707-4AC6-B098-E1139845CDBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DA96CEE-E707-4AC6-B098-E1139845CDBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5DA96CEE-E707-4AC6-B098-E1139845CDBB} = {54B9BCB7-8530-418F-B42D-DF1C6011346F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {32ED7EFA-BC41-478F-938B-9AED059ADE54}
