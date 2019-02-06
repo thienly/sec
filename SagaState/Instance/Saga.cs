@@ -19,7 +19,8 @@ namespace SagaState.Instance
             Status = status;
         }
         public Guid Id { get; set; }
-        public string Name { get; }        
-        public List<SagaStage> Trans { get; }
+        public string Name { get; set; }        
+        public List<SagaStage> Trans { get; set; }
+        public dynamic Data { get; set; }
     }
 }
