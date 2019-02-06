@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SagaExcutorOrchestrator", "SagaExcutorOrchestrator\SagaExcutorOrchestrator.csproj", "{4922ACAE-A3E3-4E83-9DC4-191E16509324}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SagaExcutorOrchestrator", "SagaExcutorOrchestrator\SagaExcutorOrchestrator.csproj", "{4922ACAE-A3E3-4E83-9DC4-191E16509324}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SagaState", "SagaState\SagaState.csproj", "{45353210-9C61-49A3-8B7B-6223CBB1DCEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SagaState", "SagaState\SagaState.csproj", "{45353210-9C61-49A3-8B7B-6223CBB1DCEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SagaLog", "SagaLog\SagaLog.csproj", "{1E2BEA7E-35DF-43D0-96A9-D9B8818597EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SagaLog", "SagaLog\SagaLog.csproj", "{1E2BEA7E-35DF-43D0-96A9-D9B8818597EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

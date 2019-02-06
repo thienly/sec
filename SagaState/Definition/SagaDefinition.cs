@@ -16,4 +16,9 @@ namespace SagaState.Definition
             return this;
         }        
     }
+
+    public class SagaDefinitionBuilder
+    {
+            
+    }
 }
