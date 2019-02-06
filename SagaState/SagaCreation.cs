@@ -20,7 +20,7 @@ namespace SagaState
                 await _mongoDatabase.CreateCollectionAsync(Constants.SagaInstanceCollection);
             }
             var sagaDefinition = await GetDefinition(nameofSaga);
-
+            
             return Task.CompletedTask;
         }
 
