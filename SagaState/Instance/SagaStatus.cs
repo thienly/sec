@@ -4,6 +4,7 @@
     {
         Created,
         Started,
-        Aborted
+        Failed,
+        Ended
     }
 }

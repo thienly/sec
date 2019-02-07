@@ -1,26 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace SagaState.Instance
 {
     public class Saga
     {
-        public Saga(string name, List<SagaStage> trans)
+        public Saga(string name)
         {
             Id = Guid.NewGuid();
             Name = name;
-            Trans = trans;
         }
-
+        [BsonRepresentation(BsonType.String)]
         public SagaStatus Status { get; private set; } = SagaStatus.Created;
 
         public void SetStatus(SagaStatus status)
         {
             Status = status;
         }
+
+        public void AddStage(SagaStage stage)
+        {
+            Trans.Add(stage);
+        }
         public Guid Id { get; set; }
         public string Name { get; set; }        
-        public List<SagaStage> Trans { get; set; }
-        public dynamic Data { get; set; }
+        public List<SagaStage> Trans { get; set; } = new List<SagaStage>();
+        public dynamic Data { get; private set;}
+
+        public void AddData(dynamic data)
+        {
+            Data = data;
+        }
     }
 }

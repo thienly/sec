@@ -1,6 +1,8 @@
 ﻿using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using SagaState.Definition;
 using MongoClient = MongoDB.Driver.MongoClient;
@@ -23,16 +25,15 @@ namespace SagaState.SeedData
             var collection = db.GetCollection<SagaDefinition>(sagaCollection);
             collection.Indexes.CreateOne(new CreateIndexModel<SagaDefinition>(Builders<SagaDefinition>.IndexKeys.Text(_ => _.Name),new CreateIndexOptions(){Unique = true}));
             var sagaDefinitions = Data();
-            collection.InsertMany(sagaDefinitions); 
-            
+            collection.InsertMany(sagaDefinitions);             
         }
 
         private static List<SagaDefinition> Data()
         {
             var lst = new List<SagaDefinition>();
-            var orderSaga = new SagaDefinition("ORDER SAGE");
+            var orderSaga = new SagaDefinition("ORDER SAGA");
             orderSaga.DefineTransaction(new SagaStageDefinition("Purchase order",
-                new HttpTransactionDefinition("http://google.com"),
+                new HttpTransactionDefinition("http://google.com" ),
                 new HttpTransactionDefinition("http://google.com")));
             orderSaga.DefineTransaction(new SagaStageDefinition("Payment",
                 new HttpTransactionDefinition("http://google.com"),

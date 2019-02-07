@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SagaState.Definition
+﻿namespace SagaState.Definition
 {
     public interface ITransactionDefinition
     {
@@ -10,7 +8,6 @@ namespace SagaState.Definition
     public class HttpTransactionDefinition : ITransactionDefinition
     {
         public string Url { get; set; }
-
         public HttpTransactionDefinition(string url)
         {
             Url = url;

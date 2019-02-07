@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using System.Threading.Tasks;
 using MongoDB.Driver;
 using SagaState.Definition;
@@ -20,19 +21,45 @@ namespace SagaState
                 await _mongoDatabase.CreateCollectionAsync(Constants.SagaInstanceCollection);
             }
             var sagaDefinition = await GetDefinition(nameofSaga);
-            
-            return Task.CompletedTask;
+            var saga = new Saga(sagaDefinition.Name);
+            saga.AddData(data);
+            foreach (var sagaDefinitionTransDefinition in sagaDefinition.TransDefinitions)
+            {
+                var activity = ConvertFrom(sagaDefinitionTransDefinition.Trans);
+                var compensating = ConvertFrom(sagaDefinitionTransDefinition.CompensatingTrans);
+                var stage = new SagaStage(sagaDefinitionTransDefinition.Name, activity, compensating);
+                saga.AddStage(stage);
+            }
+
+            await _mongoDatabase.GetCollection<Saga>(Constants.SagaInstanceCollection).InsertOneAsync(saga);
         }
 
         private async Task<SagaDefinition> GetDefinition(string name)
         {
-            var data = await _mongoDatabase.GetCollection<SagaDefinition>(Constants.SagaDefCollection).FindAsync(Builders<SagaDefinition>.Filter.Where(s => s.Name == name));
-            if (await data.AnyAsync())
+            var data = await _mongoDatabase.GetCollection<SagaDefinition>(Constants.SagaDefCollection).FindAsync(
+                Builders<SagaDefinition>.Filter.Where(s => s.Name == name),
+                new FindOptions<SagaDefinition>()
+                { Projection = new JsonProjectionDefinition<SagaDefinition, SagaDefinition>("{_id:0}") });
+            try
             {
                 var sagaDefinition = await data.FirstAsync();
                 return sagaDefinition;
             }
-            throw new SagaException($"Can not find saga definition with name : {name}");
+            catch (Exception e)
+            {
+                throw new SagaException($"Can not find saga definition with name : {name}", e);
+            }
+        }
+
+        private IActivity ConvertFrom(ITransactionDefinition trans)
+        {
+            switch (trans)
+            {
+                case HttpTransactionDefinition http:
+                    return new HttpActivity(http.Url);
+                default:
+                    throw new SagaException("The transaction definition is not support");
+            }
         }
     }
 }
