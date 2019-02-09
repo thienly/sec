@@ -5,7 +5,7 @@ namespace SagaState.Instance
 {
     public class SagaStage
     {
-        public SagaStage(string name, IActivity compensatingTrans, IActivity trans)
+        public SagaStage(string name, Activity compensatingTrans, Activity trans)
         {
             CompensatingTrans = compensatingTrans;
             Trans = trans;
@@ -18,7 +18,7 @@ namespace SagaState.Instance
             Status = status;
         }
         public string Name { get; set; }
-        public IActivity Trans { get; set; }
-        public IActivity CompensatingTrans { get; set; }
+        public Activity Trans { get; set; }
+        public Activity CompensatingTrans { get; set; }
     }
 }

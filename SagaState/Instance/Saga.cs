@@ -8,8 +8,7 @@ namespace SagaState.Instance
     public class Saga
     {
         public Saga(string name)
-        {
-            Id = Guid.NewGuid();
+        {            
             Name = name;
         }
         [BsonRepresentation(BsonType.String)]
@@ -23,8 +22,8 @@ namespace SagaState.Instance
         public void AddStage(SagaStage stage)
         {
             Trans.Add(stage);
-        }
-        public Guid Id { get; set; }
+        }                
+        public ObjectId Id { get; set; } = ObjectId.GenerateNewId();
         public string Name { get; set; }        
         public List<SagaStage> Trans { get; set; } = new List<SagaStage>();
         public dynamic Data { get; private set;}

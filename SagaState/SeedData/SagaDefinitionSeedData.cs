@@ -33,11 +33,11 @@ namespace SagaState.SeedData
             var lst = new List<SagaDefinition>();
             var orderSaga = new SagaDefinition("ORDER SAGA");
             orderSaga.DefineTransaction(new SagaStageDefinition("Purchase order",
-                new HttpTransactionDefinition("http://google.com" ),
-                new HttpTransactionDefinition("http://google.com")));
+                new HttpActivityDefinition("http://google.com" ),
+                new HttpActivityDefinition("http://google.com")));
             orderSaga.DefineTransaction(new SagaStageDefinition("Payment",
-                new HttpTransactionDefinition("http://google.com"),
-                new HttpTransactionDefinition("http://google.com")));
+                new HttpActivityDefinition("http://google.com"),
+                new HttpActivityDefinition("http://google.com")));
             lst.Add(orderSaga);
             return lst;
         }

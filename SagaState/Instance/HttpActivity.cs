@@ -1,6 +1,6 @@
 ﻿namespace SagaState.Instance
 {
-    public class HttpActivity : IActivity
+    public class HttpActivity : Activity
     {
         public HttpActivity(string url)
         {

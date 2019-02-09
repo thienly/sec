@@ -25,7 +25,7 @@ namespace SagaStateTest
         [Fact]
         public async Task return_true_if_could_create_a_saga()
         {
-            BsonClassMap.RegisterClassMap<HttpTransactionDefinition>();
+            BsonClassMap.RegisterClassMap<HttpActivityDefinition>();
             var connectionString = "mongodb://localhost:27017/saga";
             var client = new MongoClient(new MongoUrl(connectionString));
             var mongoDatabase = client.GetDatabase(new MongoUrl(connectionString).DatabaseName);
