@@ -17,16 +17,16 @@ namespace SagaStateTest
         [Fact]
         public void return_true_if_could_process_seed_data_successfully()
         {
-            var connectionString = "mongodb://localhost:27017/saga";
+            var connectionString = "mongodb://10.0.19.102:27017/saga";
             SagaDefinitionSeedData.SeedData(connectionString);   
 
         }
 
         [Fact]
         public async Task return_true_if_could_create_a_saga()
-        {
+        {            
             BsonClassMap.RegisterClassMap<HttpActivityDefinition>();
-            var connectionString = "mongodb://localhost:27017/saga";
+            var connectionString = "mongodb://10.0.19.102:27017/saga";
             var client = new MongoClient(new MongoUrl(connectionString));
             var mongoDatabase = client.GetDatabase(new MongoUrl(connectionString).DatabaseName);
             var creation = new SagaCreation(mongoDatabase);

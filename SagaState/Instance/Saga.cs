@@ -21,11 +21,12 @@ namespace SagaState.Instance
 
         public void AddStage(SagaStage stage)
         {
-            Trans.Add(stage);
+            Stage = stage;
         }                
+
         public ObjectId Id { get; set; } = ObjectId.GenerateNewId();
-        public string Name { get; set; }        
-        public List<SagaStage> Trans { get; set; } = new List<SagaStage>();
+        public string Name { get; set; }
+        public SagaStage Stage { get; set; }
         public dynamic Data { get; private set;}
 
         public void AddData(dynamic data)

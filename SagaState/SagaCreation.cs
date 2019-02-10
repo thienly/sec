@@ -23,14 +23,28 @@ namespace SagaState
             var sagaDefinition = await GetDefinition(nameofSaga);
             var saga = new Saga(sagaDefinition.Name);
             saga.AddData(data);
-            foreach (var sagaDefinitionTransDefinition in sagaDefinition.TransDefinitions)
+            SagaStage sagaStage = null;
+            for (int i = 0; i < sagaDefinition.TransDefinitions.Count; i++)
             {
-                var activity = ConvertFrom(sagaDefinitionTransDefinition.Trans);
-                var compensating = ConvertFrom(sagaDefinitionTransDefinition.CompensatingTrans);
-                var stage = new SagaStage(sagaDefinitionTransDefinition.Name, activity, compensating);
-                saga.AddStage(stage);
-            }
-
+                var activity = ConvertFrom(sagaDefinition.TransDefinitions[i].Trans);
+                var compensating = ConvertFrom(sagaDefinition.TransDefinitions[i].CompensatingTrans);
+                if (sagaStage == null)
+                {
+                    sagaStage = new SagaStage(sagaDefinition.TransDefinitions[i].Name, activity, compensating);
+                    sagaStage.PreviousStageName = string.Empty;
+                }
+                else
+                {
+                    var next = new SagaStage(sagaDefinition.TransDefinitions[i].Name, activity, compensating);
+                    sagaStage.AddNext(next);
+                    next.AddPreviousName(sagaStage.Name);
+                    if (i == sagaDefinition.TransDefinitions.Count - 1)
+                    {
+                        next.NextStage = null;
+                    }
+                }    
+            }            
+            saga.AddStage(sagaStage);
             await _mongoDatabase.GetCollection<Saga>(Constants.SagaInstanceCollection).InsertOneAsync(saga);
         }
 
