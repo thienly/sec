@@ -2,6 +2,10 @@
 {
     public class HttpActivity : Activity
     {
+        public HttpActivity()
+        {
+            
+        }
         public HttpActivity(string url)
         {
             Url = url;

@@ -6,6 +6,7 @@
         Started,
         Completed,
         Failed,
+        FailedAndNotNeedToRunCompensating,
         CompensatingStarted,
         CompensatingCompleted,
         CompensatingFailed,

@@ -9,11 +9,11 @@ using SagaState.Instance;
 namespace SagaState.Handlers
 {
     public class SagaHttpHandler : ISagaHandler
-    {
+    {        
         private HttpClient _httpClient;
         public SagaHttpHandler(HttpClient httpClient)
         {
-            _httpClient = httpClient;
+            _httpClient = httpClient;            
         }
 
         public bool CanHandle(Activity activity)
@@ -25,10 +25,19 @@ namespace SagaState.Handlers
         {
             try
             {
+                
                 var httpActivity = (HttpActivity)activity;
-                var httpResponseMessage = await _httpClient.PostAsync(httpActivity.Url, new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json"));
-                var ensureSuccessStatusCode = httpResponseMessage.EnsureSuccessStatusCode();
-                var content = await ensureSuccessStatusCode.Content.ReadAsStringAsync();
+                var httpResponseMessage = await _httpClient.PostAsync(httpActivity.Url, new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json"));                
+                if (!httpResponseMessage.IsSuccessStatusCode)
+                {
+                    return new SagaTransResult()
+                    {
+                        IsSuccess = false,
+                        NeedToRunCompensating = true,
+                        ErrorMessage = httpResponseMessage.ReasonPhrase
+                    };
+                }
+                var content = await httpResponseMessage.Content.ReadAsStringAsync();
                 var deserializeObject = JsonConvert.DeserializeObject<ExpandoObject>(content);
                 activity.SetData(deserializeObject);
                 return new SagaTransResult()
@@ -37,15 +46,15 @@ namespace SagaState.Handlers
                     IsSuccess = true
                 };
             }
-            catch (Exception e)
+            catch (HttpRequestException e)
             {
                 return new SagaTransResult()
                 {
-                    IsSuccess = true,
-                    ErrorMessage = e.Message
+                    IsSuccess = false,
+                    ErrorMessage = e.Message,
+                    NeedToRunCompensating = false
                 };
             }
-
         }
     }
 }
