@@ -1,4 +1,4 @@
-﻿using SagaWorker.Instance;
+﻿using SagaShared.Instance;
 
 namespace SagaWorker.Handlers
 {

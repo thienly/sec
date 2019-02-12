@@ -1,4 +1,4 @@
-﻿namespace SagaWorker
+﻿namespace SagaMng
 {
     public static class Constants
     {

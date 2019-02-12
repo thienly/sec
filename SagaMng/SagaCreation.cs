@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
 using MongoDB.Driver;
-using SagaWorker.Definition;
-using SagaWorker.Instance;
+using SagaMng.Definition;
+using SagaShared.Instance;
 
-namespace SagaWorker
+namespace SagaMng
 {
     public class SagaCreation
     {

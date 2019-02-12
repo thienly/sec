@@ -1,6 +1,6 @@
 ﻿using System.Dynamic;
 
-namespace SagaWorker.Instance
+namespace SagaShared.Instance
 {
     public abstract class Activity
     {        

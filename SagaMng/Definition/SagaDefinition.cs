@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SagaWorker.Definition
+namespace SagaMng.Definition
 {
     public class SagaDefinition
     {
@@ -15,10 +15,5 @@ namespace SagaWorker.Definition
             TransDefinitions.Add(sagaStageDefinition);
             return this;
         }        
-    }
-
-    public class SagaDefinitionBuilder
-    {
-            
     }
 }

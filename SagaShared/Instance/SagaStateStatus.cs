@@ -1,4 +1,4 @@
-﻿namespace SagaWorker.Instance
+﻿namespace SagaShared.Instance
 {
     public enum SagaStateStatus
     {

@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\SagaMng\SagaMng.csproj" />
     <ProjectReference Include="..\..\SagaState\SagaWorker.csproj" />
   </ItemGroup>
 

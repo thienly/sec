@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using MongoDB.Driver;
-using SagaWorker.Definition;
+using SagaMng.Definition;
 using MongoClient = MongoDB.Driver.MongoClient;
 
-namespace SagaWorker.SeedData
+namespace SagaMng.SeedData
 {
     public static class SagaDefinitionSeedData
     {

@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SagaExcutorOrchestrator", "SagaExcutorOrchestrator\SagaExcutorOrchestrator.csproj", "{4922ACAE-A3E3-4E83-9DC4-191E16509324}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SagaWorker", "SagaState\SagaWorker.csproj", "{45353210-9C61-49A3-8B7B-6223CBB1DCEA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SagaLog", "SagaLog\SagaLog.csproj", "{1E2BEA7E-35DF-43D0-96A9-D9B8818597EF}"
@@ -17,16 +15,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service1", "tests\Service1\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service2", "tests\Service2\Service2.csproj", "{44D12D93-2D94-4AE1-A70D-0A70D48EA6E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SagaMng", "SagaMng\SagaMng.csproj", "{ABE6DF94-C643-49AF-BE7C-DB878999F2A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SagaShared", "SagaShared\SagaShared.csproj", "{0C7500C0-0EC7-4D3E-90F7-1FB375874CBC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4922ACAE-A3E3-4E83-9DC4-191E16509324}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4922ACAE-A3E3-4E83-9DC4-191E16509324}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4922ACAE-A3E3-4E83-9DC4-191E16509324}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4922ACAE-A3E3-4E83-9DC4-191E16509324}.Release|Any CPU.Build.0 = Release|Any CPU
 		{45353210-9C61-49A3-8B7B-6223CBB1DCEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{45353210-9C61-49A3-8B7B-6223CBB1DCEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45353210-9C61-49A3-8B7B-6223CBB1DCEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,6 +45,14 @@ Global
 		{44D12D93-2D94-4AE1-A70D-0A70D48EA6E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44D12D93-2D94-4AE1-A70D-0A70D48EA6E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44D12D93-2D94-4AE1-A70D-0A70D48EA6E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABE6DF94-C643-49AF-BE7C-DB878999F2A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABE6DF94-C643-49AF-BE7C-DB878999F2A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABE6DF94-C643-49AF-BE7C-DB878999F2A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABE6DF94-C643-49AF-BE7C-DB878999F2A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C7500C0-0EC7-4D3E-90F7-1FB375874CBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C7500C0-0EC7-4D3E-90F7-1FB375874CBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C7500C0-0EC7-4D3E-90F7-1FB375874CBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C7500C0-0EC7-4D3E-90F7-1FB375874CBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

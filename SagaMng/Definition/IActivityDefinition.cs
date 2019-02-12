@@ -1,4 +1,4 @@
-﻿namespace SagaWorker.Definition
+﻿namespace SagaMng.Definition
 {
     public interface IActivityDefinition
     {

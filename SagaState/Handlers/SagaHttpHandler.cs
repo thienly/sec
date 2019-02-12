@@ -3,7 +3,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using SagaWorker.Instance;
+using SagaShared.Instance;
 
 namespace SagaWorker.Handlers
 {
