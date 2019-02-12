@@ -1,6 +1,6 @@
-﻿using SagaState.Instance;
+﻿using SagaWorker.Instance;
 
-namespace SagaState.Handlers
+namespace SagaWorker.Handlers
 {
     public class SagaTransResult
     {

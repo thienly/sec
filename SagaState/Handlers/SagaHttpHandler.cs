@@ -1,12 +1,11 @@
-﻿using System;
-using System.Dynamic;
+﻿using System.Dynamic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using SagaState.Instance;
+using SagaWorker.Instance;
 
-namespace SagaState.Handlers
+namespace SagaWorker.Handlers
 {
     public class SagaHttpHandler : ISagaHandler
     {        

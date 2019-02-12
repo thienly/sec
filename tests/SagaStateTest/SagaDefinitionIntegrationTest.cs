@@ -4,11 +4,11 @@ using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
-using SagaState;
-using SagaState.Definition;
-using SagaState.Handlers;
-using SagaState.Instance;
-using SagaState.SeedData;
+using SagaWorker;
+using SagaWorker.Definition;
+using SagaWorker.Handlers;
+using SagaWorker.Instance;
+using SagaWorker.SeedData;
 using Xunit;
 
 namespace SagaStateTest

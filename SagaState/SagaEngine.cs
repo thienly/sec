@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MongoDB.Driver;
-using SagaState.Handlers;
-using SagaState.Instance;
+using SagaWorker.Handlers;
+using SagaWorker.Instance;
 
-namespace SagaState
+namespace SagaWorker
 {
     public class SagaEngine
     {

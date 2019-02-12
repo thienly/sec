@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SagaState
+namespace SagaWorker
 {
     public class SagaException : Exception
     {

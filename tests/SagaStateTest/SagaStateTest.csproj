@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\SagaState\SagaState.csproj" />
+    <ProjectReference Include="..\..\SagaState\SagaWorker.csproj" />
   </ItemGroup>
 
 </Project>

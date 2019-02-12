@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace SagaState.Instance
+namespace SagaWorker.Instance
 {
     public class SagaStage
     {

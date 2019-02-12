@@ -1,4 +1,4 @@
-﻿namespace SagaState.Instance
+﻿namespace SagaWorker.Instance
 {
     public class HttpActivity : Activity
     {

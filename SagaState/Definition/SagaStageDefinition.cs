@@ -1,4 +1,4 @@
-﻿namespace SagaState.Definition
+﻿namespace SagaWorker.Definition
 {
     public class SagaStageDefinition
     {

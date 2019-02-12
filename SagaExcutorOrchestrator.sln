@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SagaExcutorOrchestrator", "SagaExcutorOrchestrator\SagaExcutorOrchestrator.csproj", "{4922ACAE-A3E3-4E83-9DC4-191E16509324}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SagaState", "SagaState\SagaState.csproj", "{45353210-9C61-49A3-8B7B-6223CBB1DCEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SagaWorker", "SagaState\SagaWorker.csproj", "{45353210-9C61-49A3-8B7B-6223CBB1DCEA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SagaLog", "SagaLog\SagaLog.csproj", "{1E2BEA7E-35DF-43D0-96A9-D9B8818597EF}"
 EndProject
@@ -13,9 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{CDC35E66
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SagaStateTest", "tests\SagaStateTest\SagaStateTest.csproj", "{1D172EE2-192B-4B07-B1B2-FDC04551B83F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service1", "tests\Service1\Service1.csproj", "{92E05E2B-9B14-4961-A307-D02B89B5F975}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service1", "tests\Service1\Service1.csproj", "{92E05E2B-9B14-4961-A307-D02B89B5F975}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service2", "tests\Service2\Service2.csproj", "{44D12D93-2D94-4AE1-A70D-0A70D48EA6E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service2", "tests\Service2\Service2.csproj", "{44D12D93-2D94-4AE1-A70D-0A70D48EA6E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

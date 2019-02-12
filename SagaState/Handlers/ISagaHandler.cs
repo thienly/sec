@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using SagaState.Instance;
+using SagaWorker.Instance;
 
-namespace SagaState.Handlers
+namespace SagaWorker.Handlers
 {
     public interface ISagaHandler
     {

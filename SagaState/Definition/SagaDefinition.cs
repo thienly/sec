@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SagaState.Definition
+namespace SagaWorker.Definition
 {
     public class SagaDefinition
     {
