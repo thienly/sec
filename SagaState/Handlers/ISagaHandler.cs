@@ -5,7 +5,7 @@ namespace SagaWorker.Handlers
 {
     public interface ISagaHandler
     {
-        bool CanHandle(Activity activity);
-        Task<SagaTransResult> Execute(Activity activity, dynamic data);
+        bool CanHandle(SagaActivity sagaActivity);
+        Task<SagaTransResult> Execute(SagaActivity sagaActivity, dynamic data);
     }
 }

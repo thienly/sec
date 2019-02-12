@@ -41,11 +41,11 @@ namespace SagaStateTest
         [Fact]
         public async Task test_engine()
         {
-            BsonClassMap.RegisterClassMap<Activity>(map =>
+            BsonClassMap.RegisterClassMap<SagaActivity>(map =>
             {
                 map.MapProperty(x => x.Data).SetIgnoreIfNull(true);
             });
-            BsonClassMap.RegisterClassMap<HttpActivity>();
+            BsonClassMap.RegisterClassMap<HttpSagaActivity>();
             BsonClassMap.RegisterClassMap<SampleData>();
             var connectionString = "mongodb://10.0.19.102:27017/saga";
             var client = new MongoClient(new MongoUrl(connectionString));

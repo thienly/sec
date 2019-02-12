@@ -9,7 +9,7 @@ namespace SagaShared.Instance
         {
             
         }
-        public SagaStage(string name,  Activity trans, Activity compensatingTrans)
+        public SagaStage(string name,  SagaActivity trans, SagaActivity compensatingTrans)
         {
             CompensatingTrans = compensatingTrans;
             Trans = trans;
@@ -22,8 +22,8 @@ namespace SagaShared.Instance
             Status = status;
         }
         public string Name { get; set; }
-        public Activity Trans { get; set; }
-        public Activity CompensatingTrans { get; set; }
+        public SagaActivity Trans { get; set; }
+        public SagaActivity CompensatingTrans { get; set; }
         public int Order { get; set; }
     }
 }

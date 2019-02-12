@@ -1,12 +1,12 @@
 ﻿namespace SagaShared.Instance
 {
-    public class HttpActivity : Activity
+    public class HttpSagaActivity : SagaActivity
     {
-        public HttpActivity()
+        public HttpSagaActivity()
         {
             
         }
-        public HttpActivity(string url)
+        public HttpSagaActivity(string url)
         {
             Url = url;
         }

@@ -15,17 +15,17 @@ namespace SagaWorker.Handlers
             _httpClient = httpClient;            
         }
 
-        public bool CanHandle(Activity activity)
+        public bool CanHandle(SagaActivity sagaActivity)
         {
-            return activity.GetType() == typeof(HttpActivity);
+            return sagaActivity.GetType() == typeof(HttpSagaActivity);
         }
 
-        public async Task<SagaTransResult> Execute(Activity activity, dynamic data)
+        public async Task<SagaTransResult> Execute(SagaActivity sagaActivity, dynamic data)
         {
             try
             {
                 
-                var httpActivity = (HttpActivity)activity;
+                var httpActivity = (HttpSagaActivity)sagaActivity;
                 var httpResponseMessage = await _httpClient.PostAsync(httpActivity.Url, new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json"));                
                 if (!httpResponseMessage.IsSuccessStatusCode)
                 {
@@ -38,10 +38,10 @@ namespace SagaWorker.Handlers
                 }
                 var content = await httpResponseMessage.Content.ReadAsStringAsync();
                 var deserializeObject = JsonConvert.DeserializeObject<ExpandoObject>(content);
-                activity.SetData(deserializeObject);
+                sagaActivity.SetData(deserializeObject);
                 return new SagaTransResult()
                 {
-                    Activity = activity,
+                    SagaActivity = sagaActivity,
                     IsSuccess = true
                 };
             }

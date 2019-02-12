@@ -50,12 +50,12 @@ namespace SagaMng
             }
         }
 
-        private Activity ConvertFrom(IActivityDefinition trans)
+        private SagaActivity ConvertFrom(IActivityDefinition trans)
         {
             switch (trans)
             {
                 case HttpActivityDefinition http:
-                    return new HttpActivity(http.Url);
+                    return new HttpSagaActivity(http.Url);
                 default:
                     throw new SagaException("The transaction definition is not support");
             }
